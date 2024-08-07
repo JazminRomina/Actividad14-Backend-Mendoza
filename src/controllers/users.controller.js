@@ -87,8 +87,6 @@ export class UsersController{
             }
             const documentationNeedIt = ["Identificacion", "Comprobante de domicilio", "Comprobante de estado de cuenta"]
             const userDocuments = user.documents.map(doc => doc.name.split('.').slice(0, -1).join('.'))
-            console.log(userDocuments)
-
             const checkDocuments = documentationNeedIt.every(doc => userDocuments.includes(doc))
             console.log(checkDocuments)
             if(!checkDocuments){
